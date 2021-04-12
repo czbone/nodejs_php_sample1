@@ -4,9 +4,10 @@ Example of using Node.js, Express.js and EJS.
 
 ### 動作環境
 
-以下のVagrant環境で動作します。
-
+Vagrant環境で動作します。
 https://github.com/czbone/lemp_nodejs_centos7
+
+/var/www/node-appに配置します。
 
 ### Endpoints
 
