@@ -2,6 +2,12 @@
 
 Example of using Node.js, Express.js and EJS.
 
+### “®ìŠÂ‹«
+
+ˆÈ‰º‚ÌVagrantŠÂ‹«‚Å“®ì‚µ‚Ü‚·B
+
+https://github.com/czbone/lemp_nodejs_centos7
+
 ### Endpoints
 
 + `/`
@@ -15,9 +21,5 @@ Example of using Node.js, Express.js and EJS.
 ## Run
 
 1. `npm start`
-2. Open `http://localhost:8080` in a web browser.
+2. Open `http://localhost:3000` in a web browser.
 
-## References
-
-+ http://expressjs.com
-+ http://ejs.co
