@@ -33,7 +33,11 @@ const io = require('socket.io')(server)
 
 io.on('connection', (socket) => {
   console.log('connect by socket')
+  socket.emit('message', 'hello')
 
+  socket.on('disconnect', () => {
+    console.log('user disconnected')
+  })
   socket.on('message', (msg) => {
     console.log('message: ' + msg)
   })

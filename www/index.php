@@ -11,20 +11,39 @@
     <title>Hello</title>
   </head>
   <body>
-    <h1>SocketIOテスト</h1>
+  	<div class="container">
+    <h3>SocketIOテスト</h3>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" class="p-2">
+  <div class="row"><div class="col-6">
+  <div class="input-group">
+    <input type="text" name="message" class="form-control" placeholder="メッセージ">
+    <button type="submit" class="btn btn-secondary">送信する</button>
+  </div>
+  </div></div>
+</form>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
+<h3>受信メッセージ</h3>
+<div class="p-2">
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // collect value of input field
+  $name = $_POST['message'];
+  if (empty($name)) {
+    echo "メッセージは空です";
+  } else {
+    echo $name;
+  }
+}
+?>
+</div>
 	<script>
-      var socket = io();
+    var socket = io();
+	socket.on('message', (msg) => {
+          //$('#messages').append($('<li>').text(msg));
+		  alert('message from server: ' + msg);
+    });
     </script>
+	</div>
   </body>
 </html>
