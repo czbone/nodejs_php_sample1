@@ -27,13 +27,13 @@
 <div class="p-2">
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // collect value of input field
-  $name = $_POST['message'];
-  if (empty($name)) {
-    echo "メッセージは空です";
-  } else {
-    echo $name;
-  }
+    // collect value of input field
+    $name = $_POST['message'];
+    if (empty($name)) {
+        echo "メッセージは空です";
+    } else {
+        echo $name;
+    }
 }
 ?>
 </div>

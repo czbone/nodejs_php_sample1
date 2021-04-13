@@ -1,0 +1,13 @@
+{
+  "git.ignoreLimitWarning": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "debug.javascript.usePreview": false,
+  "php-cs-fixer.onsave": true,
+  "php-cs-fixer.executablePath": "~/.vscode/php-cs-fixer-v2.phar",
+  "[php]": {
+    "editor.defaultFormatter": "junstyle.php-cs-fixer"
+  }
+}
