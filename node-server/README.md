@@ -22,5 +22,5 @@ https://github.com/czbone/lemp_nodejs_centos7
 ## Run
 
 1. `npm start`
-2. Open `http://localhost:3000` in a web browser.
+2. Open `http://[Server IP]` in a web browser.
 
