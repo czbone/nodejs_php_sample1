@@ -13,7 +13,9 @@ https://github.com/czbone/lemp_nodejs_centos7
 以下のパスに配置します。
 
 + node-server(Nodejsプログラム)
+
 /var/www/node-app
 
 + www(PHPプログラム)
+
 /var/www/html
