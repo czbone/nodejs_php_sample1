@@ -8,3 +8,12 @@ NginxでNodejsとPHPを同時に稼働させ、セッション情報共有や非同期通信を実行するサン
 
 https://github.com/czbone/lemp_nodejs_centos7
 
+### ディレクトリ
+
+以下のパスに配置します。
+
++ node-server(Nodejsプログラム)
+/var/www/node-app
+
++ www(PHPプログラム)
+/var/www/html
