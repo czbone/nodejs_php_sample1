@@ -41,7 +41,13 @@ io.on('connection', (socket) => {
   socket.on('message', (msg) => {
     console.log('message: ' + msg)
   })
+  socket.on('event', (msg) => {
+    console.log('event: ' + msg)
+  })
 })
+
+const redis = require('socket.io-redis')
+const adapter = io.adapter(redis({ host: '127.0.0.1', port: 6379 }))
 
 // ### サーバ起動 ###
 server.listen(PORT, HOSTNAME, () => {
