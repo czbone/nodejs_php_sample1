@@ -5,9 +5,10 @@
     "source.fixAll.eslint": true
   },
   "debug.javascript.usePreview": false,
-  "php-cs-fixer.onsave": true,
   "php-cs-fixer.executablePath": "~/.vscode/php-cs-fixer-v2.phar",
+  "php-cs-fixer.formatHtml": true,
+  "php-cs-fixer.onsave": true,
   "[php]": {
     "editor.defaultFormatter": "junstyle.php-cs-fixer"
-  }
+  },
 }
