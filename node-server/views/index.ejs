@@ -11,6 +11,9 @@
     <h1><%= title %></h1>
     <script>
       var socket = io();
+      socket.on('message', (socket) => {
+        alert('get message!');
+      });
     </script>
   </body>
 </html>

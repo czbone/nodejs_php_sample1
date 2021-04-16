@@ -15,11 +15,8 @@
 
 <body>
   <div class="container">
-    <h3>SocketIOテスト</h3>
-
-    <form method="post"
-      action="<?php echo $_SERVER['PHP_SELF'];?>"
-      class="p-2">
+    <h3>送信テスト(SocketIO)</h3>
+    <form method="post" class="p-2">
       <div class="row">
         <div class="col-6">
           <div class="input-group">
@@ -40,6 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "メッセージは空です";
     } else {
         echo $name;
+
+        require_once('./TinyRedisClient.php');
+        require_once('./Emitter.php');
+        $redis = new TinyRedisClient('127.0.0.1:6379');
+        //$redis = new \Redis(); // Using the Redis extension provided client
+        //$redis->connect('127.0.0.1', '6379');
+        $emitter = new SocketIO\Emitter($redis);
+        //$emitter->emit('event', 'payload str');
+        $emitter->emit('message', $name);
+        //$emitter->emit('event', array('property' => 'much value', 'another' => 'very object'));
     }
 }
       ?>
@@ -47,9 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script>
       var socket = io();
       socket.on('message', (msg) => {
-        //$('#messages').append($('<li>').text(msg));
-        alert('message from server: ' + msg);
-      });
+        alert('message from server: ' + msg)
+      })
     </script>
   </div>
 </body>

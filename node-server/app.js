@@ -31,24 +31,26 @@ app.use('/', router)
 // ### Socket接続処理 ###
 const io = require('socket.io')(server)
 
+const redis = require('socket.io-redis')
+const adapter = io.adapter(redis({ host: HOSTNAME, port: 6379 }))
+
 io.on('connection', (socket) => {
   console.log('connect by socket')
-  socket.emit('message', 'hello')
+  // socket.emit('message', 'hello')
 
   socket.on('disconnect', () => {
     console.log('user disconnected')
   })
-  socket.on('message', (msg) => {
-    io.emit('message', msg);
+  /* socket.on('message', (msg) => {
+    console.log('get message....')
+    io.emit('message', msg)
     console.log('message: ' + msg)
   })
   socket.on('event', (msg) => {
+    console.log('get event....')
     console.log('event: ' + msg)
-  })
+  }) */
 })
-
-const redis = require('socket.io-redis')
-const adapter = io.adapter(redis({ host: '127.0.0.1', port: 6379 }))
 
 // ### サーバ起動 ###
 server.listen(PORT, HOSTNAME, () => {
