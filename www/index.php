@@ -14,9 +14,9 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container py-5 d-grid gap-3">
     <h3>送信テスト(SocketIO)</h3>
-    <form method="post" class="p-2">
+    <form method="post" class="mb-5">
       <div class="row">
         <div class="col-6">
           <div class="input-group">
@@ -28,7 +28,7 @@
     </form>
 
     <h3>受信メッセージ</h3>
-    <div class="p-2">
+    <div>
       <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
