@@ -1,6 +1,6 @@
-# Express.js and EJS
+# NodejsとPHPのセッション共有
 
-Example of using Node.js, Express.js and EJS.
+NodejsとPHPがRedisを通してセッションを共有します。
 
 ### 動作環境
 
@@ -12,8 +12,6 @@ https://github.com/czbone/lemp_nodejs_centos7
 ### Endpoints
 
 + `/`
-+ `/student`
-+ `/teacher`
 
 ## Install
 

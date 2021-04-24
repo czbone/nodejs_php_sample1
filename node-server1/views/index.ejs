@@ -2,18 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello</title>
+    <title>Nodejsフロントエンド</title>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic" rel="stylesheet" type="text/css">
     <link href="./css/style.css" rel="stylesheet" />
-    <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <script>
-      var socket = io();
-      socket.on('message', (socket) => {
-        alert('get message!');
-      });
-    </script>
+    <h1>Nodejsフロントエンド</h1>
+    <h3>アクセス数：<%= viewcount %></h3>
+    <p><input type="button" value="更新" onclick="window.location.reload();"></p>
   </body>
 </html>
