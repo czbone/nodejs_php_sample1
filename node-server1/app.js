@@ -20,11 +20,9 @@ const redisClient = redis.createClient({ host: HOSTNAME, port: 6379 })
 const sessionConfig = {
   store: new RedisStore({
     client: redisClient,
-    // this is the default prefix used by redis-session-php
-    prefix: 'session:php:'
+    prefix: 'session:php:'  // Redisに保存するセッションデータ参照用キーのプレフィックス
   }),
-  // use the default PHP session cookie name
-  name: 'PHPSESSID',
+  name: 'PHPSESSID',  // クッキーのセッション名。PHPのデフォルトを使用。
   secret: 'node.js rules',
   resave: false,
   saveUninitialized: false
