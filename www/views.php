@@ -2,18 +2,18 @@
 require_once('./lib/ExpressSessionHandler.php');
 use danfsd\ExpressSessionHandler;
       
-// This is the express-session's secret you defined in your NodeJS application
+// Expressのexpress-sessionモジュールのsecretオプションに合わせる
 const SESSION_SECRET = "node.js rules";
 
 $handler = new ExpressSessionHandler(SESSION_SECRET);
 
-// Setting the Handler
+// PHPのセッションハンドラをカスタマイズ
 session_set_save_handler($handler, true);
 
-// Starting/Recoverying session
+// セッション読み込み開始
 session_start();
 
-// Populates $_SESSION['cookie'] with data that express-session requires
+// セッションにexpress-sessionモジュールで使用しているcookieパラメータを付加
 $handler->populateSession();
 
 if (isset($_SESSION['views'])) {
