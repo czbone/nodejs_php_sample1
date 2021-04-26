@@ -7,13 +7,15 @@ NodejsとPHPがRedisを通してセッションを共有します。
 Vagrant環境で動作します。
 https://github.com/czbone/lemp_nodejs_centos7
 
-/var/www/node-appに配置します。
+/var/www/node-app以下に配置します。
 
 ### Endpoints
 
 + `/`
 
 ## Install
+
+このディレクトリに移動して
 
 `npm install`
 
