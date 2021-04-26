@@ -15,15 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 const router = express.Router()
 
 router.get('/', function (request, response) {
-  response.render('index', { title: 'Hello!' })
-})
-
-router.get('/student', function (request, response) {
-  response.render('index', { title: 'Hello, student!' })
-})
-
-router.get('/teacher', function (request, response) {
-  response.render('index', { title: 'Hello, teacher!' })
+  response.render('index', { viewcount: 0 })
 })
 
 app.use('/', router)
