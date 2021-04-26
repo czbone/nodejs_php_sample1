@@ -37,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo $name;
 
-        require_once('./TinyRedisClient.php');
-        require_once('./Emitter.php');
+        require_once('./lib/TinyRedisClient.php');
+        require_once('./lib/Emitter.php');
         $redis = new TinyRedisClient('127.0.0.1:6379');
         //$redis = new \Redis(); // Using the Redis extension provided client
         //$redis->connect('127.0.0.1', '6379');
